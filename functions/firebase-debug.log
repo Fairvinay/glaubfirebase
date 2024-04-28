@@ -1,0 +1,503 @@
+[debug] [2024-04-28T05:14:30.082Z] ----------------------------------------------------------------------
+[debug] [2024-04-28T05:14:30.087Z] Command:       C:\node-v18.2.0-win-x64\node.exe C:\node-v18.2.0-win-x64\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-04-28T05:14:30.088Z] CLI Version:   13.7.5
+[debug] [2024-04-28T05:14:30.089Z] Platform:      win32
+[debug] [2024-04-28T05:14:30.090Z] Node Version:  v18.2.0
+[debug] [2024-04-28T05:14:30.098Z] Time:          Sun Apr 28 2024 10:44:30 GMT+0530 (India Standard Time)
+[debug] [2024-04-28T05:14:30.098Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-28T05:14:30.267Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-28T05:14:30.268Z] > authorizing via signed-in user (vvanvekar@gmail.com)
+[debug] [2024-04-28T05:14:30.268Z] [iam] checking project store-notify for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-04-28T05:14:30.271Z] > refreshing access token with scopes: []
+[debug] [2024-04-28T05:14:30.274Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-04-28T05:14:30.274Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-04-28T05:14:30.717Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-04-28T05:14:30.717Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-04-28T05:14:30.744Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/store-notify:testIamPermissions [none]
+[debug] [2024-04-28T05:14:30.744Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/store-notify:testIamPermissions x-goog-quota-user=projects/store-notify
+[debug] [2024-04-28T05:14:30.744Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/store-notify:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-04-28T05:14:32.246Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/store-notify:testIamPermissions 200
+[debug] [2024-04-28T05:14:32.247Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/store-notify:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-04-28T05:14:32.247Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/store-notify/serviceAccounts/store-notify@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-04-28T05:14:32.247Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/store-notify/serviceAccounts/store-notify@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-04-28T05:14:34.053Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/store-notify/serviceAccounts/store-notify@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-04-28T05:14:34.054Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/store-notify/serviceAccounts/store-notify@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'store-notify'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script. 
+[debug] [2024-04-28T05:15:11.298Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/store-notify [none]
+[debug] [2024-04-28T05:15:11.946Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/store-notify 200
+[debug] [2024-04-28T05:15:11.946Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/store-notify {"projectId":"store-notify","projectNumber":"396732087280","displayName":"store-notify","name":"projects/store-notify","resources":{"hostingSite":"store-notify","realtimeDatabaseInstance":"store-notify-default-rtdb","storageBucket":"store-notify.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_7bfdbcb1-f0ab-4617-86c9-55963243b3c2"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2024-04-28T05:15:11.956Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-04-28T05:15:11.956Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/store-notify
+[debug] [2024-04-28T05:15:11.962Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-04-28T05:15:11.962Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/store-notify
+[debug] [2024-04-28T05:15:11.965Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/cloudbuild.googleapis.com [none]
+[debug] [2024-04-28T05:15:11.965Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/cloudbuild.googleapis.com x-goog-quota-user=projects/store-notify
+[debug] [2024-04-28T05:15:11.967Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/artifactregistry.googleapis.com [none]
+[debug] [2024-04-28T05:15:11.968Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/artifactregistry.googleapis.com x-goog-quota-user=projects/store-notify
+[debug] [2024-04-28T05:15:13.814Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/artifactregistry.googleapis.com 200
+[debug] [2024-04-28T05:15:13.814Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2024-04-28T05:15:13.839Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/runtimeconfig.googleapis.com 200
+[debug] [2024-04-28T05:15:13.839Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-04-28T05:15:13.873Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/cloudbuild.googleapis.com 200
+[debug] [2024-04-28T05:15:13.873Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2024-04-28T05:15:13.879Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/cloudfunctions.googleapis.com 200
+[debug] [2024-04-28T05:15:13.879Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2024-04-28T05:15:13.881Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/store-notify/adminSdkConfig [none]
+[debug] [2024-04-28T05:15:14.945Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/store-notify/adminSdkConfig 200
+[debug] [2024-04-28T05:15:14.945Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/store-notify/adminSdkConfig {"projectId":"store-notify","databaseURL":"https://store-notify-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"store-notify.appspot.com","locationId":"asia-south1"}
+[debug] [2024-04-28T05:15:14.946Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/store-notify/configs [none]
+[debug] [2024-04-28T05:15:15.421Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/store-notify/configs 200
+[debug] [2024-04-28T05:15:15.421Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/store-notify/configs {}
+[debug] [2024-04-28T05:15:15.423Z] Validating nodejs source
+[debug] [2024-04-28T05:15:17.631Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "firebase-tools": "^13.7.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-04-28T05:15:17.631Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2024-04-28T05:15:17.634Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-28T05:15:17.674Z] Found firebase-functions binary at 'G:\jee-neonvinay\eclipseox\workspace\firebase-push-notification-with-anuglar\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8958
+
+[debug] [2024-04-28T05:15:21.771Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged G:\jee-neonvinay\eclipseox\workspace\firebase-push-notification-with-anuglar\functions (201.03 KB) for uploading 
+[debug] [2024-04-28T05:15:21.943Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/store-notify/locations/-/functions [none]
+[debug] [2024-04-28T05:15:22.771Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/store-notify/locations/-/functions 200
+[debug] [2024-04-28T05:15:22.771Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/store-notify/locations/-/functions {}
+[debug] [2024-04-28T05:15:22.773Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2024-04-28T05:15:24.503Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/-/functions 200
+[debug] [2024-04-28T05:15:24.503Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/-/functions {"functions":[{"name":"projects/store-notify/locations/us-central1/functions/helloWorld","buildConfig":{"build":"projects/396732087280/locations/us-central1/builds/be0d9bf9-5ab3-431f-90c1-d99c19311881","runtime":"nodejs18","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714278491221675"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/store-notify/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714278491221675"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"state":"FAILED","updateTime":"2024-04-28T04:29:09.075372145Z","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"1c7d2e2e471d8349c3d85eeb2c3f01532309303d"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/store-notify/locations/us-central1/services/helloworld for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-store-notify.cloudfunctions.net/helloWorld","createTime":"2024-04-28T04:28:11.464255813Z"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2024-04-28T05:15:24.515Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/run.googleapis.com [none]
+[debug] [2024-04-28T05:15:24.516Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/run.googleapis.com x-goog-quota-user=projects/store-notify
+[debug] [2024-04-28T05:15:24.521Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/eventarc.googleapis.com [none]
+[debug] [2024-04-28T05:15:24.521Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/eventarc.googleapis.com x-goog-quota-user=projects/store-notify
+[debug] [2024-04-28T05:15:24.527Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/pubsub.googleapis.com [none]
+[debug] [2024-04-28T05:15:24.527Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/pubsub.googleapis.com x-goog-quota-user=projects/store-notify
+[debug] [2024-04-28T05:15:24.533Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/storage.googleapis.com [none]
+[debug] [2024-04-28T05:15:24.533Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/storage.googleapis.com x-goog-quota-user=projects/store-notify
+[debug] [2024-04-28T05:15:26.355Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/pubsub.googleapis.com 200
+[debug] [2024-04-28T05:15:26.355Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2024-04-28T05:15:26.357Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/eventarc.googleapis.com 200
+[debug] [2024-04-28T05:15:26.357Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2024-04-28T05:15:26.363Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/run.googleapis.com 200
+[debug] [2024-04-28T05:15:26.363Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2024-04-28T05:15:26.364Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/storage.googleapis.com 200
+[debug] [2024-04-28T05:15:26.365Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/store-notify/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2024-04-28T05:15:26.368Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/396732087280/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-04-28T05:15:26.372Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/396732087280/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2024-04-28T05:15:28.174Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/396732087280/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2024-04-28T05:15:28.174Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/396732087280/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-396732087280@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"103639700366173017951"}}
+[debug] [2024-04-28T05:15:28.281Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/396732087280/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2024-04-28T05:15:28.281Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/396732087280/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-396732087280@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"105273483353752092849"}}
+[debug] [2024-04-28T05:15:28.283Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/store-notify [none]
+[debug] [2024-04-28T05:15:28.760Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/store-notify 200
+[debug] [2024-04-28T05:15:28.761Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/store-notify {"projectId":"store-notify","projectNumber":"396732087280","displayName":"store-notify","name":"projects/store-notify","resources":{"hostingSite":"store-notify","realtimeDatabaseInstance":"store-notify-default-rtdb","storageBucket":"store-notify.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_7bfdbcb1-f0ab-4617-86c9-55963243b3c2"}
+[debug] [2024-04-28T05:15:28.764Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2024-04-28T05:15:30.293Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2024-04-28T05:15:30.293Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-396732087280-us-central1/f1a22606-2091-4196-8b1e-22f750dc0a19.zip?GoogleAccessId=service-396732087280@gcf-admin-robot.iam.gserviceaccount.com&Expires=1714283129&Signature=qBijUP%2FU5dWsD%2BtT9eYSg5K0cDjYF6n4ij53ABrTQVfFfjb1AQFGpP18x%2FIUj2xxd6AfDjCvcR7%2BjDcCNedUgEznSDyad64hSam1toWqP1rE1Ed0s4g8ay5sxl77QlO2hGZ4BFeIMNu4VMHg4yhwoDoJ7qJbsxpDJPnBps2FvJLAhIlWgYOZNmDrtRf58Dk25bnMTepwywJQLLWiur20Aay%2B0Uk1OBH%2BTrAf5ZRibdOe84AYDx8hfeMy1dYAySLteg9yAKsupGP%2BlQCQ8vzsUAHM91Sa4oKCE0qQoru0B3WiLpoEyoRwV3Wt73sjHHDSl6%2BsAtwD%2Bp8f3IeharVFcg%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-396732087280-us-central1","object":"f1a22606-2091-4196-8b1e-22f750dc0a19.zip"}}
+[debug] [2024-04-28T05:15:30.295Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-396732087280-us-central1/f1a22606-2091-4196-8b1e-22f750dc0a19.zip GoogleAccessId=service-396732087280%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1714283129&Signature=qBijUP%2FU5dWsD%2BtT9eYSg5K0cDjYF6n4ij53ABrTQVfFfjb1AQFGpP18x%2FIUj2xxd6AfDjCvcR7%2BjDcCNedUgEznSDyad64hSam1toWqP1rE1Ed0s4g8ay5sxl77QlO2hGZ4BFeIMNu4VMHg4yhwoDoJ7qJbsxpDJPnBps2FvJLAhIlWgYOZNmDrtRf58Dk25bnMTepwywJQLLWiur20Aay%2B0Uk1OBH%2BTrAf5ZRibdOe84AYDx8hfeMy1dYAySLteg9yAKsupGP%2BlQCQ8vzsUAHM91Sa4oKCE0qQoru0B3WiLpoEyoRwV3Wt73sjHHDSl6%2BsAtwD%2Bp8f3IeharVFcg%3D%3D
+[debug] [2024-04-28T05:15:30.296Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-396732087280-us-central1/f1a22606-2091-4196-8b1e-22f750dc0a19.zip [stream]
+[debug] [2024-04-28T05:15:33.313Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-396732087280-us-central1/f1a22606-2091-4196-8b1e-22f750dc0a19.zip 200
+[debug] [2024-04-28T05:15:33.313Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-396732087280-us-central1/f1a22606-2091-4196-8b1e-22f750dc0a19.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: updating Node.js 18 (2nd Gen) function helloWorld(us-central1)... 
+[debug] [2024-04-28T05:15:33.325Z] >>> [apiv2][query] PATCH https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/functions/helloWorld updateMask=name%2CbuildConfig.runtime%2CbuildConfig.entryPoint%2CbuildConfig.source.storageSource.bucket%2CbuildConfig.source.storageSource.object%2CbuildConfig.environmentVariables%2CbuildConfig.sourceToken%2CserviceConfig.environmentVariables%2CserviceConfig.ingressSettings%2CserviceConfig.timeoutSeconds%2CserviceConfig.serviceAccountEmail%2CserviceConfig.availableMemory%2CserviceConfig.minInstanceCount%2CserviceConfig.maxInstanceCount%2CserviceConfig.maxInstanceRequestConcurrency%2CserviceConfig.availableCpu%2CserviceConfig.vpcConnector%2CserviceConfig.vpcConnectorEgressSettings%2Clabels%2CbuildConfig.buildEnvironmentVariables
+[debug] [2024-04-28T05:15:33.326Z] >>> [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/functions/helloWorld {"name":"projects/store-notify/locations/us-central1/functions/helloWorld","buildConfig":{"runtime":"nodejs18","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-uploads-396732087280-us-central1","object":"f1a22606-2091-4196-8b1e-22f750dc0a19.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"store-notify\",\"databaseURL\":\"https://store-notify-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"store-notify.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"store-notify","EVENTARC_CLOUD_EVENT_SOURCE":"projects/store-notify/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"2e315f611a32832ca925e8abb35ddb2c794570e1"}}
+[debug] [2024-04-28T05:15:35.548Z] <<< [apiv2][status] PATCH https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/functions/helloWorld 200
+[debug] [2024-04-28T05:15:35.548Z] <<< [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/functions/helloWorld {"name":"projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-04-28T05:15:35.017083664Z","target":"projects/store-notify/locations/us-central1/functions/helloWorld","verb":"update","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2024-04-28T05:15:35.550Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c [none]
+[debug] [2024-04-28T05:15:37.013Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c 200
+[debug] [2024-04-28T05:15:37.013Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c {"name":"projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-04-28T05:15:35.017083664Z","target":"projects/store-notify/locations/us-central1/functions/helloWorld","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/store-notify/locations/us-central1/functions/helloWorld","buildConfig":{"runtime":"nodejs18","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714281334947816"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/store-notify/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714278491221675"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/store-notify/locations/us-central1/services/helloworld","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"store-notify\",\"databaseURL\":\"https://store-notify-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"store-notify.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"store-notify","EVENTARC_CLOUD_EVENT_SOURCE":"projects/store-notify/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"396732087280-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"2e315f611a32832ca925e8abb35ddb2c794570e1"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/store-notify/locations/us-central1/services/helloworld for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-store-notify.cloudfunctions.net/helloWorld"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/396732087280/locations/us-central1/builds/734a22b8-5dbb-405c-9bfa-bd553deab570","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/734a22b8-5dbb-405c-9bfa-bd553deab570?project=396732087280"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":false}
+[debug] [2024-04-28T05:15:37.529Z] [update-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2024-04-28T05:15:37.530Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c [none]
+[debug] [2024-04-28T05:15:38.955Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c 200
+[debug] [2024-04-28T05:15:38.956Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c {"name":"projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-04-28T05:15:35.017083664Z","target":"projects/store-notify/locations/us-central1/functions/helloWorld","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/store-notify/locations/us-central1/functions/helloWorld","buildConfig":{"runtime":"nodejs18","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714281334947816"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/store-notify/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714278491221675"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/store-notify/locations/us-central1/services/helloworld","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"store-notify\",\"databaseURL\":\"https://store-notify-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"store-notify.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"store-notify","EVENTARC_CLOUD_EVENT_SOURCE":"projects/store-notify/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"396732087280-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"2e315f611a32832ca925e8abb35ddb2c794570e1"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/store-notify/locations/us-central1/services/helloworld for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-store-notify.cloudfunctions.net/helloWorld"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/396732087280/locations/us-central1/builds/734a22b8-5dbb-405c-9bfa-bd553deab570","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/734a22b8-5dbb-405c-9bfa-bd553deab570?project=396732087280"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":false}
+[debug] [2024-04-28T05:15:39.960Z] [update-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2024-04-28T05:15:39.961Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c [none]
+[debug] [2024-04-28T05:15:41.413Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c 200
+[debug] [2024-04-28T05:15:41.414Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c {"name":"projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-04-28T05:15:35.017083664Z","target":"projects/store-notify/locations/us-central1/functions/helloWorld","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/store-notify/locations/us-central1/functions/helloWorld","buildConfig":{"runtime":"nodejs18","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714281334947816"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/store-notify/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714278491221675"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/store-notify/locations/us-central1/services/helloworld","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"store-notify\",\"databaseURL\":\"https://store-notify-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"store-notify.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"store-notify","EVENTARC_CLOUD_EVENT_SOURCE":"projects/store-notify/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"396732087280-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"2e315f611a32832ca925e8abb35ddb2c794570e1"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/store-notify/locations/us-central1/services/helloworld for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-store-notify.cloudfunctions.net/helloWorld"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/396732087280/locations/us-central1/builds/734a22b8-5dbb-405c-9bfa-bd553deab570","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/734a22b8-5dbb-405c-9bfa-bd553deab570?project=396732087280"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":false}
+[debug] [2024-04-28T05:15:43.415Z] [update-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2024-04-28T05:15:43.415Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c [none]
+[debug] [2024-04-28T05:15:44.867Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c 200
+[debug] [2024-04-28T05:15:44.868Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c {"name":"projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-04-28T05:15:35.017083664Z","target":"projects/store-notify/locations/us-central1/functions/helloWorld","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/store-notify/locations/us-central1/functions/helloWorld","buildConfig":{"runtime":"nodejs18","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714281334947816"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/store-notify/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714278491221675"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/store-notify/locations/us-central1/services/helloworld","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"store-notify\",\"databaseURL\":\"https://store-notify-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"store-notify.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"store-notify","EVENTARC_CLOUD_EVENT_SOURCE":"projects/store-notify/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"396732087280-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"2e315f611a32832ca925e8abb35ddb2c794570e1"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/store-notify/locations/us-central1/services/helloworld for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-store-notify.cloudfunctions.net/helloWorld"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/396732087280/locations/us-central1/builds/734a22b8-5dbb-405c-9bfa-bd553deab570","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/734a22b8-5dbb-405c-9bfa-bd553deab570?project=396732087280"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":false}
+[debug] [2024-04-28T05:15:48.879Z] [update-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2024-04-28T05:15:48.880Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c [none]
+[debug] [2024-04-28T05:15:50.289Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c 200
+[debug] [2024-04-28T05:15:50.289Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c {"name":"projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-04-28T05:15:35.017083664Z","target":"projects/store-notify/locations/us-central1/functions/helloWorld","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/store-notify/locations/us-central1/functions/helloWorld","buildConfig":{"runtime":"nodejs18","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714281334947816"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/store-notify/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714278491221675"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/store-notify/locations/us-central1/services/helloworld","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"store-notify\",\"databaseURL\":\"https://store-notify-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"store-notify.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"store-notify","EVENTARC_CLOUD_EVENT_SOURCE":"projects/store-notify/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"396732087280-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"2e315f611a32832ca925e8abb35ddb2c794570e1"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/store-notify/locations/us-central1/services/helloworld for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-store-notify.cloudfunctions.net/helloWorld"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/396732087280/locations/us-central1/builds/734a22b8-5dbb-405c-9bfa-bd553deab570","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/734a22b8-5dbb-405c-9bfa-bd553deab570?project=396732087280"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":false}
+[debug] [2024-04-28T05:15:58.290Z] [update-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2024-04-28T05:15:58.290Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c [none]
+[debug] [2024-04-28T05:15:59.718Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c 200
+[debug] [2024-04-28T05:15:59.719Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c {"name":"projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-04-28T05:15:35.017083664Z","target":"projects/store-notify/locations/us-central1/functions/helloWorld","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/store-notify/locations/us-central1/functions/helloWorld","buildConfig":{"runtime":"nodejs18","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714281334947816"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/store-notify/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714278491221675"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/store-notify/locations/us-central1/services/helloworld","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"store-notify\",\"databaseURL\":\"https://store-notify-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"store-notify.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"store-notify","EVENTARC_CLOUD_EVENT_SOURCE":"projects/store-notify/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"396732087280-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"2e315f611a32832ca925e8abb35ddb2c794570e1"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/store-notify/locations/us-central1/services/helloworld for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-store-notify.cloudfunctions.net/helloWorld"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/396732087280/locations/us-central1/builds/734a22b8-5dbb-405c-9bfa-bd553deab570","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/734a22b8-5dbb-405c-9bfa-bd553deab570?project=396732087280"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":false}
+[debug] [2024-04-28T05:16:09.723Z] [update-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2024-04-28T05:16:09.723Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c [none]
+[debug] [2024-04-28T05:16:11.156Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c 200
+[debug] [2024-04-28T05:16:11.157Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c {"name":"projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-04-28T05:15:35.017083664Z","target":"projects/store-notify/locations/us-central1/functions/helloWorld","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/store-notify/locations/us-central1/functions/helloWorld","buildConfig":{"runtime":"nodejs18","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714281334947816"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/store-notify/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714278491221675"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/store-notify/locations/us-central1/services/helloworld","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"store-notify\",\"databaseURL\":\"https://store-notify-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"store-notify.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"store-notify","EVENTARC_CLOUD_EVENT_SOURCE":"projects/store-notify/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"396732087280-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"2e315f611a32832ca925e8abb35ddb2c794570e1"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/store-notify/locations/us-central1/services/helloworld for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-store-notify.cloudfunctions.net/helloWorld"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/396732087280/locations/us-central1/builds/734a22b8-5dbb-405c-9bfa-bd553deab570","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/734a22b8-5dbb-405c-9bfa-bd553deab570?project=396732087280"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":false}
+[debug] [2024-04-28T05:16:21.164Z] [update-default-us-central1-helloWorld] Retrying task index 0
+[debug] [2024-04-28T05:16:21.165Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c [none]
+[debug] [2024-04-28T05:16:22.602Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c 200
+[debug] [2024-04-28T05:16:22.602Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c {"name":"projects/store-notify/locations/us-central1/operations/operation-1714281334251-6172139f920da-f4a2278e-5214a18c","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2024-04-28T05:15:35.017083664Z","endTime":"2024-04-28T05:16:21.920621488Z","target":"projects/store-notify/locations/us-central1/functions/helloWorld","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/store-notify/locations/us-central1/functions/helloWorld","buildConfig":{"runtime":"nodejs18","entryPoint":"helloWorld","source":{"storageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714281334947816"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/store-notify/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-396732087280-us-central1","object":"helloWorld/function-source.zip","generation":"1714278491221675"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/store-notify/locations/us-central1/services/helloworld","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"store-notify\",\"databaseURL\":\"https://store-notify-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"store-notify.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"store-notify","EVENTARC_CLOUD_EVENT_SOURCE":"projects/store-notify/locations/us-central1/services/helloWorld","FUNCTION_TARGET":"helloWorld"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"396732087280-compute@developer.gserviceaccount.com","availableMemory":"256Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"FAILED","labels":{"firebase-functions-hash":"2e315f611a32832ca925e8abb35ddb2c794570e1"},"stateMessages":[{"severity":"ERROR","type":"CloudRunServiceNotFound","message":"Cloud Run service projects/store-notify/locations/us-central1/services/helloworld for the function was not found. The function will not work correctly. Please redeploy."}],"environment":"GEN_2","url":"https://us-central1-store-notify.cloudfunctions.net/helloWorld"},"stages":[{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":true,"error":{"code":3,"message":"Build failed with status: FAILURE and message: npm ERR! code EUSAGE\nnpm ERR! \nnpm ERR! `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.\nnpm ERR! \nnpm ERR! Missing: jest@29.7.0 from lock file\nnpm ERR! Missing: @jest/core@29.7.0 from lock file\nnpm ERR! Missing: @jest/types@29.6.3 from lock file\nnpm ERR! Missing: import-local@3.1.0 from lock file\nnpm ERR! Missing: jest-cli@29.7.0 from lock file\nnpm ERR! Missing: @jest/console@29.7.0 from lock file\nnpm ERR! Missing: @jest/reporters@29.7.0 from lock file\nnpm ERR! Missing: @jest/test-result@29.7.0 from lock file\nnpm ERR! Missing: @jest/transform@29.7.0 from lock file\nnpm ERR! Missing: ci-info@3.9.0 from lock file\nnpm ERR! Missing: exit@0.1.2 from lock file\nnpm ERR! Missing: jest-changed-files@29.7.0 from lock file\nnpm ERR! Missing: jest-config@29.7.0 from lock file\nnpm ERR! Missing: jest-haste-map@29.7.0 from lock file\nnpm ERR! Missing: jest-message-util@29.7.0 from lock file\nnpm ERR! Missing: jest-regex-util@29.6.3 from lock file\nnpm ERR! Missing: jest-resolve@29.7.0 from lock file\nnpm ERR! Missing: jest-resolve-dependencies@29.7.0 from lock file\nnpm ERR! Missing: jest-runner@29.7.0 from lock file\nnpm ERR! Missing: jest-runtime@29.7.0 from lock file\nnpm ERR! Missing: jest-snapshot@29.7.0 from lock file\nnpm ERR! Missing: jest-util@29.7.0 from lock file\nnpm ERR! Missing: jest-validate@29.7.0 from lock file\nnpm ERR! Missing: jest-watcher@29.7.0 from lock file\nnpm ERR! Missing: pretty-format@29.7.0 from lock file\nnpm ERR! Missing: @bcoe/v8-coverage@0.2.3 from lock file\nnpm ERR! Missing: @jridgewell/trace-mapping@0.3.25 from lock file\nnpm ERR! Missing: collect-v8-coverage@1.0.2 from lock file\nnpm ERR! Missing: glob@7.2.3 from lock file\nnpm ERR! Missing: istanbul-lib-coverage@3.2.2 from lock file\nnpm ERR! Missing: istanbul-lib-instrument@6.0.2 from lock file\nnpm ERR! Missing: istanbul-lib-report@3.0.1 from lock file\nnpm ERR! Missing: istanbul-lib-source-maps@4.0.1 from lock file\nnpm ERR! Missing: istanbul-reports@3.1.7 from lock file\nnpm ERR! Missing: jest-worker@29.7.0 from lock file\nnpm ERR! Missing: string-length@4.0.2 from lock file\nnpm ERR! Missing: v8-to-istanbul@9.2.0 from lock file\nnpm ERR! Missing: @types/istanbul-lib-coverage@2.0.6 from lock file\nnpm ERR! Missing: @babel/core@7.24.4 from lock file\nnpm ERR! Missing: babel-plugin-istanbul@6.1.1 from lock file\nnpm ERR! Missing: convert-source-map@2.0.0 from lock file\nnpm ERR! Missing: pirates@4.0.6 from lock file\nnpm ERR! Missing: write-file-atomic@4.0.2 from lock file\nnpm ERR! Missing: @ampproject/remapping@2.3.0 from lock file\nnpm ERR! Missing: @babel/code-frame@7.24.2 from lock file\nnpm ERR! Missing: @babel/generator@7.24.4 from lock file\nnpm ERR! Missing: @babel/helper-compilation-targets@7.23.6 from lock file\nnpm ERR! Missing: @babel/helper-module-transforms@7.23.3 from lock file\nnpm ERR! Missing: @babel/helpers@7.24.4 from lock file\nnpm ERR! Missing: @babel/template@7.24.0 from lock file\nnpm ERR! Missing: @babel/traverse@7.24.1 from lock file\nnpm ERR! Missing: @babel/types@7.24.0 from lock file\nnpm ERR! Missing: gensync@1.0.0-beta.2 from lock file\nnpm ERR! Missing: json5@2.2.3 from lock file\nnpm ERR! Missing: semver@6.3.1 from lock file\nnpm ERR! Missing: @jridgewell/gen-mapping@0.3.5 from lock file\nnpm ERR! Missing: @babel/highlight@7.24.2 from lock file\nnpm ERR! Missing: jsesc@2.5.2 from lock file\nnpm ERR! Missing: @babel/compat-data@7.24.4 from lock file\nnpm ERR! Missing: @babel/helper-validator-option@7.23.5 from lock file\nnpm ERR! Missing: browserslist@4.23.0 from lock file\nnpm ERR! Missing: lru-cache@5.1.1 from lock file\nnpm ERR! Missing: semver@6.3.1 from lock file\nnpm ERR! Missing: @babel/helper-environment-visitor@7.22.20 from lock file\nnpm ERR! Missing: @babel/helper-module-imports@7.24.3 from lock file\nnpm ERR! Missing: @babel/helper-simple-access@7.22.5 from lock file\nnpm ERR! Missing: @babel/helper-split-export-declaration@7.22.6 from lock file\nnpm ERR! Missing: @babel/helper-validator-identifier@7.22.20 from lock file\nnpm ERR! Missing: chalk@2.4.2 from lock file\nnpm ERR! Missing: js-tokens@4.0.0 from lock file\nnpm ERR! Missing: @babel/helper-function-name@7.23.0 from lock file\nnpm ERR! Missing: @babel/helper-hoist-variables@7.22.5 from lock file\nnpm ERR! Missing: globals@11.12.0 from lock file\nnpm ERR! Missing: @babel/helper-string-parser@7.24.1 from lock file\nnpm ERR! Missing: to-fast-properties@2.0.0 from lock file\nnpm ERR! Missing: @jest/schemas@29.6.3 from lock file\nnpm ERR! Missing: @types/istanbul-reports@3.0.4 from lock file\nnpm ERR! Missing: @types/yargs@17.0.32 from lock file\nnpm ERR! Missing: @sinclair/typebox@0.27.8 from lock file\nnpm ERR! Missing: @jridgewell/set-array@1.2.1 from lock file\nnpm ERR! Missing: @jridgewell/sourcemap-codec@1.4.15 from lock file\nnpm ERR! Missing: @jridgewell/resolve-uri@3.1.2 from lock file\nnpm ERR! Missing: @types/istanbul-lib-report@3.0.3 from lock file\nnpm ERR! Missing: @types/yargs-parser@21.0.3 from lock file\nnpm ERR! Missing: @babel/helper-plugin-utils@7.24.0 from lock file\nnpm ERR! Missing: @istanbuljs/load-nyc-config@1.1.0 from lock file\nnpm ERR! Missing: @istanbuljs/schema@0.1.3 from lock file\nnpm ERR! Missing: istanbul-lib-instrument@5.2.1 from lock file\nnpm ERR! Missing: test-exclude@6.0.0 from lock file\nnpm ERR! Missing: camelcase@5.3.1 from lock file\nnpm ERR! Missing: find-up@4.1.0 from lock file\nnpm ERR! Missing: get-package-type@0.1.0 from lock file\nnpm ERR! Missing: js-yaml@3.14.1 from lock file\nnpm ERR! Missing: resolve-from@5.0.0 from lock file\nnpm ERR! Missing: caniuse-lite@1.0.30001613 from lock file\nnpm ERR! Missing: electron-to-chromium@1.4.750 from lock file\nnpm ERR! Missing: node-releases@2.0.14 from lock file\nnpm ERR! Missing: update-browserslist-db@1.0.13 from lock file\nnpm ERR! Missing: pkg-dir@4.2.0 from lock file\nnpm ERR! Missing: resolve-cwd@3.0.0 from lock file\nnpm ERR! Missing: make-dir@4.0.0 from lock file\nnpm ERR! Missing: html-escaper@2.0.2 from lock file\nnpm ERR! Missing: execa@5.1.1 from lock file\nnpm ERR! Missing: get-stream@6.0.1 from lock file\nnpm ERR! Missing: human-signals@2.1.0 from lock file\nnpm ERR! Missing: merge-stream@2.0.0 from lock file\nnpm ERR! Missing: npm-run-path@4.0.1 from lock file\nnpm ERR! Missing: strip-final-newline@2.0.0 from lock file\nnpm ERR! Missing: create-jest@29.7.0 from lock file\nnpm ERR! Missing: prompts@2.4.2 from lock file\nnpm ERR! Missing: @jest/test-sequencer@29.7.0 from lock file\nnpm ERR! Missing: babel-jest@29.7.0 from lock file\nnpm ERR! Missing: ci-info@3.9.0 from lock file\nnpm ERR! Missing: deepmerge@4.3.1 from lock file\nnpm ERR! Missing: glob@7.2.3 from lock file\nnpm ERR! Missing: jest-circus@29.7.0 from lock file\nnpm ERR! Missing: jest-environment-node@29.7.0 from lock file\nnpm ERR! Missing: jest-get-type@29.6.3 from lock file\nnpm ERR! Missing: parse-json@5.2.0 from lock file\nnpm ERR! Missing: @types/babel__core@7.20.5 from lock file\nnpm ERR! Missing: babel-preset-jest@29.6.3 from lock file\nnpm ERR! Missing: @types/babel__generator@7.6.8 from lock file\nnpm ERR! Missing: @types/babel__template@7.4.4 from lock file\nnpm ERR! Missing: @types/babel__traverse@7.20.5 from lock file\nnpm ERR! Missing: babel-plugin-jest-hoist@29.6.3 from lock file\nnpm ERR! Missing: babel-preset-current-node-syntax@1.0.1 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-async-generators@7.8.4 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-bigint@7.8.3 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-class-properties@7.12.13 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-import-meta@7.10.4 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-json-strings@7.8.3 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-logical-assignment-operators@7.10.4 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-nullish-coalescing-operator@7.8.3 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-numeric-separator@7.10.4 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-object-rest-spread@7.8.3 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-optional-catch-binding@7.8.3 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-optional-chaining@7.8.3 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-top-level-await@7.14.5 from lock file\nnpm ERR! Missing: @jest/environment@29.7.0 from lock file\nnpm ERR! Missing: @jest/expect@29.7.0 from lock file\nnpm ERR! Missing: co@4.6.0 from lock file\nnpm ERR! Missing: dedent@1.5.3 from lock file\nnpm ERR! Missing: is-generator-fn@2.1.0 from lock file\nnpm ERR! Missing: jest-each@29.7.0 from lock file\nnpm ERR! Missing: jest-matcher-utils@29.7.0 from lock file\nnpm ERR! Missing: pure-rand@6.1.0 from lock file\nnpm ERR! Missing: stack-utils@2.0.6 from lock file\nnpm ERR! Missing: @jest/fake-timers@29.7.0 from lock file\nnpm ERR! Missing: jest-mock@29.7.0 from lock file\nnpm ERR! Missing: expect@29.7.0 from lock file\nnpm ERR! Missing: @sinonjs/fake-timers@10.3.0 from lock file\nnpm ERR! Missing: @sinonjs/commons@3.0.1 from lock file\nnpm ERR! Missing: type-detect@4.0.8 from lock file\nnpm ERR! Missing: @jest/expect-utils@29.7.0 from lock file\nnpm ERR! Missing: @types/graceful-fs@4.1.9 from lock file\nnpm ERR! Missing: fb-watchman@2.0.2 from lock file\nnpm ERR! Missing: walker@1.0.8 from lock file\nnpm ERR! Missing: bser@2.1.1 from lock file\nnpm ERR! Missing: node-int64@0.4.0 from lock file\nnpm ERR! Missing: jest-diff@29.7.0 from lock file\nnpm ERR! Missing: diff-sequences@29.6.3 from lock file\nnpm ERR! Missing: @types/stack-utils@2.0.3 from lock file\nnpm ERR! Missing: jest-pnp-resolver@1.2.3 from lock file\nnpm ERR! Missing: resolve.exports@2.0.2 from lock file\nnpm ERR! Missing: emittery@0.13.1 from lock file\nnpm ERR! Missing: jest-docblock@29.7.0 from lock file\nnpm ERR! Missing: jest-leak-detector@29.7.0 from lock file\nnpm ERR! Missing: source-map-support@0.5.13 from lock file\nnpm ERR! Missing: detect-newline@3.1.0 from lock file\nnpm ERR! Missing: @jest/globals@29.7.0 from lock file\nnpm ERR! Missing: @jest/source-map@29.6.3 from lock file\nnpm ERR! Missing: cjs-module-lexer@1.3.0 from lock file\nnpm ERR! Missing: glob@7.2.3 from lock file\nnpm ERR! Missing: strip-bom@4.0.0 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-jsx@7.24.1 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-typescript@7.24.1 from lock file\nnpm ERR! Missing: ci-info@3.9.0 from lock file\nnpm ERR! Missing: supports-color@8.1.1 from lock file\nnpm ERR! Missing: error-ex@1.3.2 from lock file\nnpm ERR! Missing: json-parse-even-better-errors@2.3.1 from lock file\nnpm ERR! Missing: lines-and-columns@1.2.4 from lock file\nnpm ERR! Missing: is-arrayish@0.2.1 from lock file\nnpm ERR! Missing: find-up@4.1.0 from lock file\nnpm ERR! Missing: ansi-styles@5.2.0 from lock file\nnpm ERR! Missing: react-is@18.3.1 from lock file\nnpm ERR! Missing: kleur@3.0.3 from lock file\nnpm ERR! Missing: sisteransi@1.0.5 from lock file\nnpm ERR! Missing: resolve-from@5.0.0 from lock file\nnpm ERR! Missing: buffer-from@1.1.2 from lock file\nnpm ERR! Missing: escape-string-regexp@2.0.0 from lock file\nnpm ERR! Missing: char-regex@1.0.2 from lock file\nnpm ERR! Missing: glob@7.2.3 from lock file\nnpm ERR! Missing: makeerror@1.0.12 from lock file\nnpm ERR! Missing: tmpl@1.0.5 from lock file\nnpm ERR! Missing: yallist@3.1.1 from lock file\nnpm ERR! Missing: ansi-styles@3.2.1 from lock file\nnpm ERR! Missing: escape-string-regexp@1.0.5 from lock file\nnpm ERR! Missing: supports-color@5.5.0 from lock file\nnpm ERR! Missing: color-convert@1.9.3 from lock file\nnpm ERR! Missing: color-name@1.1.3 from lock file\nnpm ERR! Missing: has-flag@3.0.0 from lock file\nnpm ERR! Missing: locate-path@5.0.0 from lock file\nnpm ERR! Missing: argparse@1.0.10 from lock file\nnpm ERR! Missing: sprintf-js@1.0.3 from lock file\nnpm ERR! Missing: p-locate@4.1.0 from lock file\nnpm ERR! Missing: p-limit@2.3.0 from lock file\nnpm ERR! Missing: p-try@2.2.0 from lock file\nnpm ERR! Missing: semver@6.3.1 from lock file\nnpm ERR! Missing: locate-path@5.0.0 from lock file\nnpm ERR! Missing: p-locate@4.1.0 from lock file\nnpm ERR! Missing: p-limit@2.3.0 from lock file\nnpm ERR! \nnpm ERR! Clean install a project\nnpm ERR! \nnpm ERR! Usage:\nnpm ERR! npm ci\nnpm ERR! \nnpm ERR! Options:\nnpm ERR! [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]\nnpm ERR! [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]\nnpm ERR! [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]\nnpm ERR! [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]\nnpm ERR! [--no-bin-links] [--no-fund] [--dry-run]\nnpm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]\nnpm ERR! [-ws|--workspaces] [--include-workspace-root] [--install-links]\nnpm ERR! \nnpm ERR! aliases: clean-install, ic, install-clean, isntall-clean\nnpm ERR! \nnpm ERR! Run \"npm help ci\" for more info\n\nnpm ERR! A complete log of this run can be found in: /www-data-home/.npm/_logs/2024-04-28T05_15_54_473Z-debug-0.log. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/734a22b8-5dbb-405c-9bfa-bd553deab570?project=396732087280."}}
+[debug] [2024-04-28T05:16:22.603Z] Got source token undefined for region us-central1
+[error] Build failed with status: FAILURE and message: npm ERR! code EUSAGE
+npm ERR! 
+npm ERR! `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+npm ERR! 
+npm ERR! Missing: jest@29.7.0 from lock file
+npm ERR! Missing: @jest/core@29.7.0 from lock file
+npm ERR! Missing: @jest/types@29.6.3 from lock file
+npm ERR! Missing: import-local@3.1.0 from lock file
+npm ERR! Missing: jest-cli@29.7.0 from lock file
+npm ERR! Missing: @jest/console@29.7.0 from lock file
+npm ERR! Missing: @jest/reporters@29.7.0 from lock file
+npm ERR! Missing: @jest/test-result@29.7.0 from lock file
+npm ERR! Missing: @jest/transform@29.7.0 from lock file
+npm ERR! Missing: ci-info@3.9.0 from lock file
+npm ERR! Missing: exit@0.1.2 from lock file
+npm ERR! Missing: jest-changed-files@29.7.0 from lock file
+npm ERR! Missing: jest-config@29.7.0 from lock file
+npm ERR! Missing: jest-haste-map@29.7.0 from lock file
+npm ERR! Missing: jest-message-util@29.7.0 from lock file
+npm ERR! Missing: jest-regex-util@29.6.3 from lock file
+npm ERR! Missing: jest-resolve@29.7.0 from lock file
+npm ERR! Missing: jest-resolve-dependencies@29.7.0 from lock file
+npm ERR! Missing: jest-runner@29.7.0 from lock file
+npm ERR! Missing: jest-runtime@29.7.0 from lock file
+npm ERR! Missing: jest-snapshot@29.7.0 from lock file
+npm ERR! Missing: jest-util@29.7.0 from lock file
+npm ERR! Missing: jest-validate@29.7.0 from lock file
+npm ERR! Missing: jest-watcher@29.7.0 from lock file
+npm ERR! Missing: pretty-format@29.7.0 from lock file
+npm ERR! Missing: @bcoe/v8-coverage@0.2.3 from lock file
+npm ERR! Missing: @jridgewell/trace-mapping@0.3.25 from lock file
+npm ERR! Missing: collect-v8-coverage@1.0.2 from lock file
+npm ERR! Missing: glob@7.2.3 from lock file
+npm ERR! Missing: istanbul-lib-coverage@3.2.2 from lock file
+npm ERR! Missing: istanbul-lib-instrument@6.0.2 from lock file
+npm ERR! Missing: istanbul-lib-report@3.0.1 from lock file
+npm ERR! Missing: istanbul-lib-source-maps@4.0.1 from lock file
+npm ERR! Missing: istanbul-reports@3.1.7 from lock file
+npm ERR! Missing: jest-worker@29.7.0 from lock file
+npm ERR! Missing: string-length@4.0.2 from lock file
+npm ERR! Missing: v8-to-istanbul@9.2.0 from lock file
+npm ERR! Missing: @types/istanbul-lib-coverage@2.0.6 from lock file
+npm ERR! Missing: @babel/core@7.24.4 from lock file
+npm ERR! Missing: babel-plugin-istanbul@6.1.1 from lock file
+npm ERR! Missing: convert-source-map@2.0.0 from lock file
+npm ERR! Missing: pirates@4.0.6 from lock file
+npm ERR! Missing: write-file-atomic@4.0.2 from lock file
+npm ERR! Missing: @ampproject/remapping@2.3.0 from lock file
+npm ERR! Missing: @babel/code-frame@7.24.2 from lock file
+npm ERR! Missing: @babel/generator@7.24.4 from lock file
+npm ERR! Missing: @babel/helper-compilation-targets@7.23.6 from lock file
+npm ERR! Missing: @babel/helper-module-transforms@7.23.3 from lock file
+npm ERR! Missing: @babel/helpers@7.24.4 from lock file
+npm ERR! Missing: @babel/template@7.24.0 from lock file
+npm ERR! Missing: @babel/traverse@7.24.1 from lock file
+npm ERR! Missing: @babel/types@7.24.0 from lock file
+npm ERR! Missing: gensync@1.0.0-beta.2 from lock file
+npm ERR! Missing: json5@2.2.3 from lock file
+npm ERR! Missing: semver@6.3.1 from lock file
+npm ERR! Missing: @jridgewell/gen-mapping@0.3.5 from lock file
+npm ERR! Missing: @babel/highlight@7.24.2 from lock file
+npm ERR! Missing: jsesc@2.5.2 from lock file
+npm ERR! Missing: @babel/compat-data@7.24.4 from lock file
+npm ERR! Missing: @babel/helper-validator-option@7.23.5 from lock file
+npm ERR! Missing: browserslist@4.23.0 from lock file
+npm ERR! Missing: lru-cache@5.1.1 from lock file
+npm ERR! Missing: semver@6.3.1 from lock file
+npm ERR! Missing: @babel/helper-environment-visitor@7.22.20 from lock file
+npm ERR! Missing: @babel/helper-module-imports@7.24.3 from lock file
+npm ERR! Missing: @babel/helper-simple-access@7.22.5 from lock file
+npm ERR! Missing: @babel/helper-split-export-declaration@7.22.6 from lock file
+npm ERR! Missing: @babel/helper-validator-identifier@7.22.20 from lock file
+npm ERR! Missing: chalk@2.4.2 from lock file
+npm ERR! Missing: js-tokens@4.0.0 from lock file
+npm ERR! Missing: @babel/helper-function-name@7.23.0 from lock file
+npm ERR! Missing: @babel/helper-hoist-variables@7.22.5 from lock file
+npm ERR! Missing: globals@11.12.0 from lock file
+npm ERR! Missing: @babel/helper-string-parser@7.24.1 from lock file
+npm ERR! Missing: to-fast-properties@2.0.0 from lock file
+npm ERR! Missing: @jest/schemas@29.6.3 from lock file
+npm ERR! Missing: @types/istanbul-reports@3.0.4 from lock file
+npm ERR! Missing: @types/yargs@17.0.32 from lock file
+npm ERR! Missing: @sinclair/typebox@0.27.8 from lock file
+npm ERR! Missing: @jridgewell/set-array@1.2.1 from lock file
+npm ERR! Missing: @jridgewell/sourcemap-codec@1.4.15 from lock file
+npm ERR! Missing: @jridgewell/resolve-uri@3.1.2 from lock file
+npm ERR! Missing: @types/istanbul-lib-report@3.0.3 from lock file
+npm ERR! Missing: @types/yargs-parser@21.0.3 from lock file
+npm ERR! Missing: @babel/helper-plugin-utils@7.24.0 from lock file
+npm ERR! Missing: @istanbuljs/load-nyc-config@1.1.0 from lock file
+npm ERR! Missing: @istanbuljs/schema@0.1.3 from lock file
+npm ERR! Missing: istanbul-lib-instrument@5.2.1 from lock file
+npm ERR! Missing: test-exclude@6.0.0 from lock file
+npm ERR! Missing: camelcase@5.3.1 from lock file
+npm ERR! Missing: find-up@4.1.0 from lock file
+npm ERR! Missing: get-package-type@0.1.0 from lock file
+npm ERR! Missing: js-yaml@3.14.1 from lock file
+npm ERR! Missing: resolve-from@5.0.0 from lock file
+npm ERR! Missing: caniuse-lite@1.0.30001613 from lock file
+npm ERR! Missing: electron-to-chromium@1.4.750 from lock file
+npm ERR! Missing: node-releases@2.0.14 from lock file
+npm ERR! Missing: update-browserslist-db@1.0.13 from lock file
+npm ERR! Missing: pkg-dir@4.2.0 from lock file
+npm ERR! Missing: resolve-cwd@3.0.0 from lock file
+npm ERR! Missing: make-dir@4.0.0 from lock file
+npm ERR! Missing: html-escaper@2.0.2 from lock file
+npm ERR! Missing: execa@5.1.1 from lock file
+npm ERR! Missing: get-stream@6.0.1 from lock file
+npm ERR! Missing: human-signals@2.1.0 from lock file
+npm ERR! Missing: merge-stream@2.0.0 from lock file
+npm ERR! Missing: npm-run-path@4.0.1 from lock file
+npm ERR! Missing: strip-final-newline@2.0.0 from lock file
+npm ERR! Missing: create-jest@29.7.0 from lock file
+npm ERR! Missing: prompts@2.4.2 from lock file
+npm ERR! Missing: @jest/test-sequencer@29.7.0 from lock file
+npm ERR! Missing: babel-jest@29.7.0 from lock file
+npm ERR! Missing: ci-info@3.9.0 from lock file
+npm ERR! Missing: deepmerge@4.3.1 from lock file
+npm ERR! Missing: glob@7.2.3 from lock file
+npm ERR! Missing: jest-circus@29.7.0 from lock file
+npm ERR! Missing: jest-environment-node@29.7.0 from lock file
+npm ERR! Missing: jest-get-type@29.6.3 from lock file
+npm ERR! Missing: parse-json@5.2.0 from lock file
+npm ERR! Missing: @types/babel__core@7.20.5 from lock file
+npm ERR! Missing: babel-preset-jest@29.6.3 from lock file
+npm ERR! Missing: @types/babel__generator@7.6.8 from lock file
+npm ERR! Missing: @types/babel__template@7.4.4 from lock file
+npm ERR! Missing: @types/babel__traverse@7.20.5 from lock file
+npm ERR! Missing: babel-plugin-jest-hoist@29.6.3 from lock file
+npm ERR! Missing: babel-preset-current-node-syntax@1.0.1 from lock file
+npm ERR! Missing: @babel/plugin-syntax-async-generators@7.8.4 from lock file
+npm ERR! Missing: @babel/plugin-syntax-bigint@7.8.3 from lock file
+npm ERR! Missing: @babel/plugin-syntax-class-properties@7.12.13 from lock file
+npm ERR! Missing: @babel/plugin-syntax-import-meta@7.10.4 from lock file
+npm ERR! Missing: @babel/plugin-syntax-json-strings@7.8.3 from lock file
+npm ERR! Missing: @babel/plugin-syntax-logical-assignment-operators@7.10.4 from lock file
+npm ERR! Missing: @babel/plugin-syntax-nullish-coalescing-operator@7.8.3 from lock file
+npm ERR! Missing: @babel/plugin-syntax-numeric-separator@7.10.4 from lock file
+npm ERR! Missing: @babel/plugin-syntax-object-rest-spread@7.8.3 from lock file
+npm ERR! Missing: @babel/plugin-syntax-optional-catch-binding@7.8.3 from lock file
+npm ERR! Missing: @babel/plugin-syntax-optional-chaining@7.8.3 from lock file
+npm ERR! Missing: @babel/plugin-syntax-top-level-await@7.14.5 from lock file
+npm ERR! Missing: @jest/environment@29.7.0 from lock file
+npm ERR! Missing: @jest/expect@29.7.0 from lock file
+npm ERR! Missing: co@4.6.0 from lock file
+npm ERR! Missing: dedent@1.5.3 from lock file
+npm ERR! Missing: is-generator-fn@2.1.0 from lock file
+npm ERR! Missing: jest-each@29.7.0 from lock file
+npm ERR! Missing: jest-matcher-utils@29.7.0 from lock file
+npm ERR! Missing: pure-rand@6.1.0 from lock file
+npm ERR! Missing: stack-utils@2.0.6 from lock file
+npm ERR! Missing: @jest/fake-timers@29.7.0 from lock file
+npm ERR! Missing: jest-mock@29.7.0 from lock file
+npm ERR! Missing: expect@29.7.0 from lock file
+npm ERR! Missing: @sinonjs/fake-timers@10.3.0 from lock file
+npm ERR! Missing: @sinonjs/commons@3.0.1 from lock file
+npm ERR! Missing: type-detect@4.0.8 from lock file
+npm ERR! Missing: @jest/expect-utils@29.7.0 from lock file
+npm ERR! Missing: @types/graceful-fs@4.1.9 from lock file
+npm ERR! Missing: fb-watchman@2.0.2 from lock file
+npm ERR! Missing: walker@1.0.8 from lock file
+npm ERR! Missing: bser@2.1.1 from lock file
+npm ERR! Missing: node-int64@0.4.0 from lock file
+npm ERR! Missing: jest-diff@29.7.0 from lock file
+npm ERR! Missing: diff-sequences@29.6.3 from lock file
+npm ERR! Missing: @types/stack-utils@2.0.3 from lock file
+npm ERR! Missing: jest-pnp-resolver@1.2.3 from lock file
+npm ERR! Missing: resolve.exports@2.0.2 from lock file
+npm ERR! Missing: emittery@0.13.1 from lock file
+npm ERR! Missing: jest-docblock@29.7.0 from lock file
+npm ERR! Missing: jest-leak-detector@29.7.0 from lock file
+npm ERR! Missing: source-map-support@0.5.13 from lock file
+npm ERR! Missing: detect-newline@3.1.0 from lock file
+npm ERR! Missing: @jest/globals@29.7.0 from lock file
+npm ERR! Missing: @jest/source-map@29.6.3 from lock file
+npm ERR! Missing: cjs-module-lexer@1.3.0 from lock file
+npm ERR! Missing: glob@7.2.3 from lock file
+npm ERR! Missing: strip-bom@4.0.0 from lock file
+npm ERR! Missing: @babel/plugin-syntax-jsx@7.24.1 from lock file
+npm ERR! Missing: @babel/plugin-syntax-typescript@7.24.1 from lock file
+npm ERR! Missing: ci-info@3.9.0 from lock file
+npm ERR! Missing: supports-color@8.1.1 from lock file
+npm ERR! Missing: error-ex@1.3.2 from lock file
+npm ERR! Missing: json-parse-even-better-errors@2.3.1 from lock file
+npm ERR! Missing: lines-and-columns@1.2.4 from lock file
+npm ERR! Missing: is-arrayish@0.2.1 from lock file
+npm ERR! Missing: find-up@4.1.0 from lock file
+npm ERR! Missing: ansi-styles@5.2.0 from lock file
+npm ERR! Missing: react-is@18.3.1 from lock file
+npm ERR! Missing: kleur@3.0.3 from lock file
+npm ERR! Missing: sisteransi@1.0.5 from lock file
+npm ERR! Missing: resolve-from@5.0.0 from lock file
+npm ERR! Missing: buffer-from@1.1.2 from lock file
+npm ERR! Missing: escape-string-regexp@2.0.0 from lock file
+npm ERR! Missing: char-regex@1.0.2 from lock file
+npm ERR! Missing: glob@7.2.3 from lock file
+npm ERR! Missing: makeerror@1.0.12 from lock file
+npm ERR! Missing: tmpl@1.0.5 from lock file
+npm ERR! Missing: yallist@3.1.1 from lock file
+npm ERR! Missing: ansi-styles@3.2.1 from lock file
+npm ERR! Missing: escape-string-regexp@1.0.5 from lock file
+npm ERR! Missing: supports-color@5.5.0 from lock file
+npm ERR! Missing: color-convert@1.9.3 from lock file
+npm ERR! Missing: color-name@1.1.3 from lock file
+npm ERR! Missing: has-flag@3.0.0 from lock file
+npm ERR! Missing: locate-path@5.0.0 from lock file
+npm ERR! Missing: argparse@1.0.10 from lock file
+npm ERR! Missing: sprintf-js@1.0.3 from lock file
+npm ERR! Missing: p-locate@4.1.0 from lock file
+npm ERR! Missing: p-limit@2.3.0 from lock file
+npm ERR! Missing: p-try@2.2.0 from lock file
+npm ERR! Missing: semver@6.3.1 from lock file
+npm ERR! Missing: locate-path@5.0.0 from lock file
+npm ERR! Missing: p-locate@4.1.0 from lock file
+npm ERR! Missing: p-limit@2.3.0 from lock file
+npm ERR! 
+npm ERR! Clean install a project
+npm ERR! 
+npm ERR! Usage:
+npm ERR! npm ci
+npm ERR! 
+npm ERR! Options:
+npm ERR! [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm ERR! [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm ERR! [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm ERR! [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm ERR! [--no-bin-links] [--no-fund] [--dry-run]
+npm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm ERR! [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm ERR! 
+npm ERR! aliases: clean-install, ic, install-clean, isntall-clean
+npm ERR! 
+npm ERR! Run "npm help ci" for more info
+
+npm ERR! A complete log of this run can be found in: /www-data-home/.npm/_logs/2024-04-28T05_15_54_473Z-debug-0.log. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/734a22b8-5dbb-405c-9bfa-bd553deab570?project=396732087280.
+[debug] [2024-04-28T05:16:22.636Z] Total Function Deployment time: 49300
+[debug] [2024-04-28T05:16:22.636Z] 1 Functions Deployed
+[debug] [2024-04-28T05:16:22.636Z] 1 Functions Errored
+[debug] [2024-04-28T05:16:22.636Z] 0 Function Deployments Aborted
+[debug] [2024-04-28T05:16:22.636Z] Average Function Deployment time: 49298
+[info] 
+[info] Functions deploy had errors with the following functions:
+	helloWorld(us-central1)
+[debug] [2024-04-28T05:16:22.832Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2024-04-28T05:16:22.837Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/store-notify/locations/us-central1/repositories/gcf-artifacts/packages/hello_world [none]
+[debug] [2024-04-28T05:16:22.842Z] >>> [apiv2][query] GET https://us.gcr.io/v2/store-notify/gcf/us-central1/tags/list [none]
+[debug] [2024-04-28T05:16:23.416Z] <<< [apiv2][status] GET https://us.gcr.io/v2/store-notify/gcf/us-central1/tags/list 404
+[debug] [2024-04-28T05:16:23.416Z] <<< [apiv2][body] GET https://us.gcr.io/v2/store-notify/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-04-28T05:16:23.418Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[debug] [2024-04-28T05:16:23.430Z] >>> [apiv2][query] GET https://us.gcr.io/v2/store-notify/gcf/us-central1/tags/list [none]
+[debug] [2024-04-28T05:16:23.937Z] <<< [apiv2][status] GET https://us.gcr.io/v2/store-notify/gcf/us-central1/tags/list 404
+[debug] [2024-04-28T05:16:23.937Z] <<< [apiv2][body] GET https://us.gcr.io/v2/store-notify/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-04-28T05:16:23.937Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[debug] [2024-04-28T05:16:24.039Z] >>> [apiv2][query] GET https://us.gcr.io/v2/store-notify/gcf/us-central1/tags/list [none]
+[debug] [2024-04-28T05:16:24.336Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/store-notify/locations/us-central1/repositories/gcf-artifacts/packages/hello_world 404
+[debug] [2024-04-28T05:16:24.336Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/store-notify/locations/us-central1/repositories/gcf-artifacts/packages/hello_world {"error":{"code":404,"message":"Package \"projects/store-notify/locations/us-central1/repositories/gcf-artifacts/packages/hello_world\" was not found.","status":"NOT_FOUND"}}
+[debug] [2024-04-28T05:16:24.532Z] <<< [apiv2][status] GET https://us.gcr.io/v2/store-notify/gcf/us-central1/tags/list 404
+[debug] [2024-04-28T05:16:24.533Z] <<< [apiv2][body] GET https://us.gcr.io/v2/store-notify/gcf/us-central1/tags/list {"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}]}
+[debug] [2024-04-28T05:16:24.533Z] Failed docker command with error  HTTP Error: 404, Not Found {"name":"FirebaseError","children":[],"context":{"body":{"errors":[{"code":"NAME_UNKNOWN","message":"Repository \"us.gcr.io\" not found"}],"error":{"message":"Not Found"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Not Found","status":404}
+[warn] !  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/gcr/images/store-notify/us/gcf 
+[debug] [2024-04-28T05:16:24.534Z] Functions deploy failed.
+[debug] [2024-04-28T05:16:24.535Z] {
+  "endpoint": {
+    "id": "helloWorld",
+    "project": "store-notify",
+    "region": "us-central1",
+    "entryPoint": "helloWorld",
+    "platform": "gcfv2",
+    "runtime": "nodejs18",
+    "httpsTrigger": {},
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"store-notify\",\"databaseURL\":\"https://store-notify-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"store-notify.appspot.com\",\"locationId\":\"asia-south1\"}",
+      "GCLOUD_PROJECT": "store-notify",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/store-notify/locations/us-central1/services/helloWorld"
+    },
+    "codebase": "default",
+    "securityLevel": "SECURE_ALWAYS",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "2e315f611a32832ca925e8abb35ddb2c794570e1"
+  },
+  "op": "update",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Build failed with status: FAILURE and message: npm ERR! code EUSAGE\nnpm ERR! \nnpm ERR! `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.\nnpm ERR! \nnpm ERR! Missing: jest@29.7.0 from lock file\nnpm ERR! Missing: @jest/core@29.7.0 from lock file\nnpm ERR! Missing: @jest/types@29.6.3 from lock file\nnpm ERR! Missing: import-local@3.1.0 from lock file\nnpm ERR! Missing: jest-cli@29.7.0 from lock file\nnpm ERR! Missing: @jest/console@29.7.0 from lock file\nnpm ERR! Missing: @jest/reporters@29.7.0 from lock file\nnpm ERR! Missing: @jest/test-result@29.7.0 from lock file\nnpm ERR! Missing: @jest/transform@29.7.0 from lock file\nnpm ERR! Missing: ci-info@3.9.0 from lock file\nnpm ERR! Missing: exit@0.1.2 from lock file\nnpm ERR! Missing: jest-changed-files@29.7.0 from lock file\nnpm ERR! Missing: jest-config@29.7.0 from lock file\nnpm ERR! Missing: jest-haste-map@29.7.0 from lock file\nnpm ERR! Missing: jest-message-util@29.7.0 from lock file\nnpm ERR! Missing: jest-regex-util@29.6.3 from lock file\nnpm ERR! Missing: jest-resolve@29.7.0 from lock file\nnpm ERR! Missing: jest-resolve-dependencies@29.7.0 from lock file\nnpm ERR! Missing: jest-runner@29.7.0 from lock file\nnpm ERR! Missing: jest-runtime@29.7.0 from lock file\nnpm ERR! Missing: jest-snapshot@29.7.0 from lock file\nnpm ERR! Missing: jest-util@29.7.0 from lock file\nnpm ERR! Missing: jest-validate@29.7.0 from lock file\nnpm ERR! Missing: jest-watcher@29.7.0 from lock file\nnpm ERR! Missing: pretty-format@29.7.0 from lock file\nnpm ERR! Missing: @bcoe/v8-coverage@0.2.3 from lock file\nnpm ERR! Missing: @jridgewell/trace-mapping@0.3.25 from lock file\nnpm ERR! Missing: collect-v8-coverage@1.0.2 from lock file\nnpm ERR! Missing: glob@7.2.3 from lock file\nnpm ERR! Missing: istanbul-lib-coverage@3.2.2 from lock file\nnpm ERR! Missing: istanbul-lib-instrument@6.0.2 from lock file\nnpm ERR! Missing: istanbul-lib-report@3.0.1 from lock file\nnpm ERR! Missing: istanbul-lib-source-maps@4.0.1 from lock file\nnpm ERR! Missing: istanbul-reports@3.1.7 from lock file\nnpm ERR! Missing: jest-worker@29.7.0 from lock file\nnpm ERR! Missing: string-length@4.0.2 from lock file\nnpm ERR! Missing: v8-to-istanbul@9.2.0 from lock file\nnpm ERR! Missing: @types/istanbul-lib-coverage@2.0.6 from lock file\nnpm ERR! Missing: @babel/core@7.24.4 from lock file\nnpm ERR! Missing: babel-plugin-istanbul@6.1.1 from lock file\nnpm ERR! Missing: convert-source-map@2.0.0 from lock file\nnpm ERR! Missing: pirates@4.0.6 from lock file\nnpm ERR! Missing: write-file-atomic@4.0.2 from lock file\nnpm ERR! Missing: @ampproject/remapping@2.3.0 from lock file\nnpm ERR! Missing: @babel/code-frame@7.24.2 from lock file\nnpm ERR! Missing: @babel/generator@7.24.4 from lock file\nnpm ERR! Missing: @babel/helper-compilation-targets@7.23.6 from lock file\nnpm ERR! Missing: @babel/helper-module-transforms@7.23.3 from lock file\nnpm ERR! Missing: @babel/helpers@7.24.4 from lock file\nnpm ERR! Missing: @babel/template@7.24.0 from lock file\nnpm ERR! Missing: @babel/traverse@7.24.1 from lock file\nnpm ERR! Missing: @babel/types@7.24.0 from lock file\nnpm ERR! Missing: gensync@1.0.0-beta.2 from lock file\nnpm ERR! Missing: json5@2.2.3 from lock file\nnpm ERR! Missing: semver@6.3.1 from lock file\nnpm ERR! Missing: @jridgewell/gen-mapping@0.3.5 from lock file\nnpm ERR! Missing: @babel/highlight@7.24.2 from lock file\nnpm ERR! Missing: jsesc@2.5.2 from lock file\nnpm ERR! Missing: @babel/compat-data@7.24.4 from lock file\nnpm ERR! Missing: @babel/helper-validator-option@7.23.5 from lock file\nnpm ERR! Missing: browserslist@4.23.0 from lock file\nnpm ERR! Missing: lru-cache@5.1.1 from lock file\nnpm ERR! Missing: semver@6.3.1 from lock file\nnpm ERR! Missing: @babel/helper-environment-visitor@7.22.20 from lock file\nnpm ERR! Missing: @babel/helper-module-imports@7.24.3 from lock file\nnpm ERR! Missing: @babel/helper-simple-access@7.22.5 from lock file\nnpm ERR! Missing: @babel/helper-split-export-declaration@7.22.6 from lock file\nnpm ERR! Missing: @babel/helper-validator-identifier@7.22.20 from lock file\nnpm ERR! Missing: chalk@2.4.2 from lock file\nnpm ERR! Missing: js-tokens@4.0.0 from lock file\nnpm ERR! Missing: @babel/helper-function-name@7.23.0 from lock file\nnpm ERR! Missing: @babel/helper-hoist-variables@7.22.5 from lock file\nnpm ERR! Missing: globals@11.12.0 from lock file\nnpm ERR! Missing: @babel/helper-string-parser@7.24.1 from lock file\nnpm ERR! Missing: to-fast-properties@2.0.0 from lock file\nnpm ERR! Missing: @jest/schemas@29.6.3 from lock file\nnpm ERR! Missing: @types/istanbul-reports@3.0.4 from lock file\nnpm ERR! Missing: @types/yargs@17.0.32 from lock file\nnpm ERR! Missing: @sinclair/typebox@0.27.8 from lock file\nnpm ERR! Missing: @jridgewell/set-array@1.2.1 from lock file\nnpm ERR! Missing: @jridgewell/sourcemap-codec@1.4.15 from lock file\nnpm ERR! Missing: @jridgewell/resolve-uri@3.1.2 from lock file\nnpm ERR! Missing: @types/istanbul-lib-report@3.0.3 from lock file\nnpm ERR! Missing: @types/yargs-parser@21.0.3 from lock file\nnpm ERR! Missing: @babel/helper-plugin-utils@7.24.0 from lock file\nnpm ERR! Missing: @istanbuljs/load-nyc-config@1.1.0 from lock file\nnpm ERR! Missing: @istanbuljs/schema@0.1.3 from lock file\nnpm ERR! Missing: istanbul-lib-instrument@5.2.1 from lock file\nnpm ERR! Missing: test-exclude@6.0.0 from lock file\nnpm ERR! Missing: camelcase@5.3.1 from lock file\nnpm ERR! Missing: find-up@4.1.0 from lock file\nnpm ERR! Missing: get-package-type@0.1.0 from lock file\nnpm ERR! Missing: js-yaml@3.14.1 from lock file\nnpm ERR! Missing: resolve-from@5.0.0 from lock file\nnpm ERR! Missing: caniuse-lite@1.0.30001613 from lock file\nnpm ERR! Missing: electron-to-chromium@1.4.750 from lock file\nnpm ERR! Missing: node-releases@2.0.14 from lock file\nnpm ERR! Missing: update-browserslist-db@1.0.13 from lock file\nnpm ERR! Missing: pkg-dir@4.2.0 from lock file\nnpm ERR! Missing: resolve-cwd@3.0.0 from lock file\nnpm ERR! Missing: make-dir@4.0.0 from lock file\nnpm ERR! Missing: html-escaper@2.0.2 from lock file\nnpm ERR! Missing: execa@5.1.1 from lock file\nnpm ERR! Missing: get-stream@6.0.1 from lock file\nnpm ERR! Missing: human-signals@2.1.0 from lock file\nnpm ERR! Missing: merge-stream@2.0.0 from lock file\nnpm ERR! Missing: npm-run-path@4.0.1 from lock file\nnpm ERR! Missing: strip-final-newline@2.0.0 from lock file\nnpm ERR! Missing: create-jest@29.7.0 from lock file\nnpm ERR! Missing: prompts@2.4.2 from lock file\nnpm ERR! Missing: @jest/test-sequencer@29.7.0 from lock file\nnpm ERR! Missing: babel-jest@29.7.0 from lock file\nnpm ERR! Missing: ci-info@3.9.0 from lock file\nnpm ERR! Missing: deepmerge@4.3.1 from lock file\nnpm ERR! Missing: glob@7.2.3 from lock file\nnpm ERR! Missing: jest-circus@29.7.0 from lock file\nnpm ERR! Missing: jest-environment-node@29.7.0 from lock file\nnpm ERR! Missing: jest-get-type@29.6.3 from lock file\nnpm ERR! Missing: parse-json@5.2.0 from lock file\nnpm ERR! Missing: @types/babel__core@7.20.5 from lock file\nnpm ERR! Missing: babel-preset-jest@29.6.3 from lock file\nnpm ERR! Missing: @types/babel__generator@7.6.8 from lock file\nnpm ERR! Missing: @types/babel__template@7.4.4 from lock file\nnpm ERR! Missing: @types/babel__traverse@7.20.5 from lock file\nnpm ERR! Missing: babel-plugin-jest-hoist@29.6.3 from lock file\nnpm ERR! Missing: babel-preset-current-node-syntax@1.0.1 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-async-generators@7.8.4 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-bigint@7.8.3 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-class-properties@7.12.13 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-import-meta@7.10.4 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-json-strings@7.8.3 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-logical-assignment-operators@7.10.4 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-nullish-coalescing-operator@7.8.3 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-numeric-separator@7.10.4 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-object-rest-spread@7.8.3 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-optional-catch-binding@7.8.3 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-optional-chaining@7.8.3 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-top-level-await@7.14.5 from lock file\nnpm ERR! Missing: @jest/environment@29.7.0 from lock file\nnpm ERR! Missing: @jest/expect@29.7.0 from lock file\nnpm ERR! Missing: co@4.6.0 from lock file\nnpm ERR! Missing: dedent@1.5.3 from lock file\nnpm ERR! Missing: is-generator-fn@2.1.0 from lock file\nnpm ERR! Missing: jest-each@29.7.0 from lock file\nnpm ERR! Missing: jest-matcher-utils@29.7.0 from lock file\nnpm ERR! Missing: pure-rand@6.1.0 from lock file\nnpm ERR! Missing: stack-utils@2.0.6 from lock file\nnpm ERR! Missing: @jest/fake-timers@29.7.0 from lock file\nnpm ERR! Missing: jest-mock@29.7.0 from lock file\nnpm ERR! Missing: expect@29.7.0 from lock file\nnpm ERR! Missing: @sinonjs/fake-timers@10.3.0 from lock file\nnpm ERR! Missing: @sinonjs/commons@3.0.1 from lock file\nnpm ERR! Missing: type-detect@4.0.8 from lock file\nnpm ERR! Missing: @jest/expect-utils@29.7.0 from lock file\nnpm ERR! Missing: @types/graceful-fs@4.1.9 from lock file\nnpm ERR! Missing: fb-watchman@2.0.2 from lock file\nnpm ERR! Missing: walker@1.0.8 from lock file\nnpm ERR! Missing: bser@2.1.1 from lock file\nnpm ERR! Missing: node-int64@0.4.0 from lock file\nnpm ERR! Missing: jest-diff@29.7.0 from lock file\nnpm ERR! Missing: diff-sequences@29.6.3 from lock file\nnpm ERR! Missing: @types/stack-utils@2.0.3 from lock file\nnpm ERR! Missing: jest-pnp-resolver@1.2.3 from lock file\nnpm ERR! Missing: resolve.exports@2.0.2 from lock file\nnpm ERR! Missing: emittery@0.13.1 from lock file\nnpm ERR! Missing: jest-docblock@29.7.0 from lock file\nnpm ERR! Missing: jest-leak-detector@29.7.0 from lock file\nnpm ERR! Missing: source-map-support@0.5.13 from lock file\nnpm ERR! Missing: detect-newline@3.1.0 from lock file\nnpm ERR! Missing: @jest/globals@29.7.0 from lock file\nnpm ERR! Missing: @jest/source-map@29.6.3 from lock file\nnpm ERR! Missing: cjs-module-lexer@1.3.0 from lock file\nnpm ERR! Missing: glob@7.2.3 from lock file\nnpm ERR! Missing: strip-bom@4.0.0 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-jsx@7.24.1 from lock file\nnpm ERR! Missing: @babel/plugin-syntax-typescript@7.24.1 from lock file\nnpm ERR! Missing: ci-info@3.9.0 from lock file\nnpm ERR! Missing: supports-color@8.1.1 from lock file\nnpm ERR! Missing: error-ex@1.3.2 from lock file\nnpm ERR! Missing: json-parse-even-better-errors@2.3.1 from lock file\nnpm ERR! Missing: lines-and-columns@1.2.4 from lock file\nnpm ERR! Missing: is-arrayish@0.2.1 from lock file\nnpm ERR! Missing: find-up@4.1.0 from lock file\nnpm ERR! Missing: ansi-styles@5.2.0 from lock file\nnpm ERR! Missing: react-is@18.3.1 from lock file\nnpm ERR! Missing: kleur@3.0.3 from lock file\nnpm ERR! Missing: sisteransi@1.0.5 from lock file\nnpm ERR! Missing: resolve-from@5.0.0 from lock file\nnpm ERR! Missing: buffer-from@1.1.2 from lock file\nnpm ERR! Missing: escape-string-regexp@2.0.0 from lock file\nnpm ERR! Missing: char-regex@1.0.2 from lock file\nnpm ERR! Missing: glob@7.2.3 from lock file\nnpm ERR! Missing: makeerror@1.0.12 from lock file\nnpm ERR! Missing: tmpl@1.0.5 from lock file\nnpm ERR! Missing: yallist@3.1.1 from lock file\nnpm ERR! Missing: ansi-styles@3.2.1 from lock file\nnpm ERR! Missing: escape-string-regexp@1.0.5 from lock file\nnpm ERR! Missing: supports-color@5.5.0 from lock file\nnpm ERR! Missing: color-convert@1.9.3 from lock file\nnpm ERR! Missing: color-name@1.1.3 from lock file\nnpm ERR! Missing: has-flag@3.0.0 from lock file\nnpm ERR! Missing: locate-path@5.0.0 from lock file\nnpm ERR! Missing: argparse@1.0.10 from lock file\nnpm ERR! Missing: sprintf-js@1.0.3 from lock file\nnpm ERR! Missing: p-locate@4.1.0 from lock file\nnpm ERR! Missing: p-limit@2.3.0 from lock file\nnpm ERR! Missing: p-try@2.2.0 from lock file\nnpm ERR! Missing: semver@6.3.1 from lock file\nnpm ERR! Missing: locate-path@5.0.0 from lock file\nnpm ERR! Missing: p-locate@4.1.0 from lock file\nnpm ERR! Missing: p-limit@2.3.0 from lock file\nnpm ERR! \nnpm ERR! Clean install a project\nnpm ERR! \nnpm ERR! Usage:\nnpm ERR! npm ci\nnpm ERR! \nnpm ERR! Options:\nnpm ERR! [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]\nnpm ERR! [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]\nnpm ERR! [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]\nnpm ERR! [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]\nnpm ERR! [--no-bin-links] [--no-fund] [--dry-run]\nnpm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]\nnpm ERR! [-ws|--workspaces] [--include-workspace-root] [--install-links]\nnpm ERR! \nnpm ERR! aliases: clean-install, ic, install-clean, isntall-clean\nnpm ERR! \nnpm ERR! Run \"npm help ci\" for more info\n\nnpm ERR! A complete log of this run can be found in: /www-data-home/.npm/_logs/2024-04-28T05_15_54_473Z-debug-0.log. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/734a22b8-5dbb-405c-9bfa-bd553deab570?project=396732087280.",
+    "status": 3,
+    "code": 3
+  }
+}
+[debug] [2024-04-28T05:16:24.711Z] Error: Failed to update function helloWorld in region us-central1
+    at C:\nvm\v18.2.0\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:394:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.updateV2Function (C:\nvm\v18.2.0\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:385:32)
+    at async Fabricator.updateEndpoint (C:\nvm\v18.2.0\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:154:13)
+    at async handle (C:\nvm\v18.2.0\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:88:17)
+[error] 
+[error] Error: There was an error deploying functions

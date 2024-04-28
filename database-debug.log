@@ -1,0 +1,19 @@
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/C:/Users/DELL/.cache/firebase/emulators/firebase-database-emulator-v4.11.2.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+12:57:41.456 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+12:57:41.855 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+12:58:13.682 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - store-notify-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 280ms, init: 0ms
+12:58:13.835 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace store-notify-default-rtdb status Active to Active
+12:59:54.331 [FirebaseWorkerPool-1-3] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace store-notify, but the emulator is configured for store-notify-default-rtdb. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+12:59:54.427 [NamespaceSystem-akka.actor.default-dispatcher-8] INFO com.firebase.core.namespace.NamespaceActor - store-notify successfully activated FBKV (SurveyIdle(0)) wait: 70ms, init: 0ms
+13:32:53.447 [FirebaseWorkerPool-1-3] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace fake-server, but the emulator is configured for store-notify-default-rtdb,store-notify. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+13:32:53.482 [NamespaceSystem-akka.actor.default-dispatcher-19] INFO com.firebase.core.namespace.NamespaceActor - fake-server successfully activated FBKV (SurveyIdle(0)) wait: 14ms, init: 0ms
