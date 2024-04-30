@@ -1,0 +1,26 @@
+{
+  "version": "1",
+  "name": "FCM_FireBasae_Store-Notify",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ],
+  "clientCertificates": {
+    "enabled": true,
+    "certs": [
+      {
+        "domain": "glaubhanta",
+        "certFilePath": "G:\\jee-neonvinay\\eclipseox\\workspace\\nodejs-web-push-sample\\ssl.crt\\glaubhanta.crt",
+        "keyFilePath": "G:\\jee-neonvinay\\eclipseox\\workspace\\nodejs-web-push-sample\\ssl.crt\\glaubhanta.key",
+        "passphrase": ""
+      },
+      {
+        "domain": "adfg.com",
+        "certFilePath": "G:\\jee-neonvinay\\eclipseox\\workspace\\nodejs-web-push-sample\\ssl.crt\\ca.crt",
+        "keyFilePath": "G:\\jee-neonvinay\\eclipseox\\workspace\\nodejs-web-push-sample\\ssl.crt\\ca.key",
+        "passphrase": ""
+      }
+    ]
+  }
+}

@@ -4,6 +4,7 @@ http://localhost:9005/?state=858496091&code=4/0AeaYSHDKIQYWLGg3Mv0q4bStQg15V9vu8
 
 https://stackoverflow.com/questions/70052479/firebase-storage-an-unknown-error-occurred-please-check-the-error-payload-for
 
+ git remote set-url origin https://github.com/Fairvinay/glaubfirebase.git
 
 firebase login
 
@@ -15,6 +16,46 @@ firebase deploy
 
 
 firebase emulators:start
+
+
+for angular way to initialize firebase @angular/fire  this is waste 
+
+ng serve --port 3450 --ssl true --ssl-cert ./ssl.crt/server.crt --ssl-key ./ssl.key/server.key
+
+
+curl -X POST ^
+  https://fcm.googleapis.com/fcm/send ^
+  -H 'Authorization: key=AAAAXF8TO_A:APA91bEKXOnlz4PEy8NuLsntJTgzlNadid7PvnHOQBWX08j2f2b7lc-zwFFsB8jadcQ4HYhGyFgv0YnDwJpnEoXLw0HVqVSxQsDCO521TlKR_3FQYw2n5IyW9kxz7GSVEQyBi0UMpX4G' ^
+  -H 'Content-Type: application/json' ^
+  -d '{ ^
+ "notification": { ^
+  "title": "First Notification", ^
+  "body": "Hello from Jishnu!!" ^
+ }, ^
+ "to" : "BGNeJguSobiuNsximwvJBI_pUtTzOMj1scCMBpV3B4M7ag63YvQmyrf-IXrYJeTwyNoEoybrklL9cDSWI3xWbOo" ^
+}
+
+curl -X POST \
+  https://fcm.googleapis.com/fcm/send \
+  -H 'Authorization: key=AAAAXF8TO_A:APA91bEKXOnlz4PEy8NuLsntJTgzlNadid7PvnHOQBWX08j2f2b7lc-zwFFsB8jadcQ4HYhGyFgv0YnDwJpnEoXLw0HVqVSxQsDCO521TlKR_3FQYw2n5IyW9kxz7GSVEQyBi0UMpX4G' \
+  -H 'Content-Type: application/json' \
+  -d '{ \
+ "notification": { \
+  "title": "First Notification", \
+  "body": "Hello from Jishnu!!" \
+ }, \
+ "to" : "BGNeJguSobiuNsximwvJBI_pUtTzOMj1scCMBpV3B4M7ag63YvQmyrf-IXrYJeTwyNoEoybrklL9cDSWI3xWbOo" \
+}
+
+
+ web-push send-notification  \
+  --endpoint=https://fcm.googleapis.com/fcm/send/d61c5u920dw:APA91bEmnw8utjDYCqSRplFMVCzQMg9e5XxpYajvh37mv2QIlISdasBFLbFca9ZZ4Uqcya0ck-SP84YJUEnWsVr3mwYfaDB7vGtsDQuEpfDdcIqOX_wrCRkBW2NDWRZ9qUz9hSgtI3sY \
+  --key=BL7ELU24fJTAlH5Kyl8N6BDCac8u8li_U5PIwG963MOvdYs9s7LSzj8x_7v7RFdLZ9Eap50PiiyF5K0TDAis7t0 \
+  --auth=juarI8x__VnHvsOgfeAPHg \
+  --vapid-subject=mailto:example@qq.com \
+  --vapid-pubkey=BGtkbcjrO12YMoDuq2sCQeHlu47uPx3SHTgFKZFYiBW8Qr0D9vgyZSZPdw6_4ZFEI9Snk1VEAj2qTYI1I1YxBXE \
+  --vapid-pvtkey=I0_d0vnesxbBSUmlDdOKibGo6vEXRO-Vu88QlSlm5j0 \
+  --payload=Hello
 
 
 http://127.0.0.1:9099/

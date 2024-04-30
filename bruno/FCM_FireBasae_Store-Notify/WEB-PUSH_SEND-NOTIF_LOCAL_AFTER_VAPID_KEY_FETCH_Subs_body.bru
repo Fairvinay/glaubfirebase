@@ -1,0 +1,27 @@
+meta {
+  name: WEB-PUSH_SEND-NOTIF_LOCAL_AFTER_VAPID_KEY_FETCH_Subs_body
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://localhost:3489/subscribe
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: key=AAAAXF8TO_A:APA91bEKXOnlz4PEy8NuLsntJTgzlNadid7PvnHOQBWX08j2f2b7lc-zwFFsB8jadcQ4HYhGyFgv0YnDwJpnEoXLw0HVqVSxQsDCO521TlKR_3FQYw2n5IyW9kxz7GSVEQyBi0UMpX4G
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "endpoint": "https://fcm.googleapis.com/fcm/send",
+      "expirationTime": " null",
+      "keys":{
+          "auth": "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",
+          "p256dh": "BGNeJguSobiuNsximwvJBI_pUtTzOMj1scCMBpV3B4M7ag63YvQmyrf-IXrYJeTwyNoEoybrklL9cDSWI3xWbOo"
+      }
+  }
+}

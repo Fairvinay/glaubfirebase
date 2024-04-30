@@ -2,13 +2,99 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>AfNotification</title>
+    <title>Glaubhanta Store Notifier</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Material Design Theming -->  <link rel='stylesheet' href='https://code.getmdl.io/1.1.3/material.orange-indigo.min.css'>  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>  <script defer src='https://code.getmdl.io/1.1.3/material.min.js'></script>  <link rel='stylesheet' href='main.css'>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="manifest" href="./manifest.json" />
+    <!-- update the version number as needed -->    <script defer src="/__/firebase/10.11.1/firebase-app-compat.js"></script>    <!-- include only the Firebase features as you need -->    <script defer src="/__/firebase/10.11.1/firebase-auth-compat.js"></script>    <script defer src="/__/firebase/10.11.1/firebase-database-compat.js"></script>    <script defer src="/__/firebase/10.11.1/firebase-firestore-compat.js"></script>    <script defer src="/__/firebase/10.11.1/firebase-functions-compat.js"></script>    <script defer src="/__/firebase/10.11.1/firebase-messaging-compat.js"></script>    <script defer src="/__/firebase/10.11.1/firebase-storage-compat.js"></script>    <script defer src="/__/firebase/10.11.1/firebase-analytics-compat.js"></script>    <script defer src="/__/firebase/10.11.1/firebase-remote-config-compat.js"></script>    <script defer src="/__/firebase/10.11.1/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <style media="screen">      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }      @media (max-width: 600px) {        body, #message { margin-top: 0; background: white; box-shadow: none; }        body { border-top: 16px solid #ffa100; }      }    </style>
+	<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-messaging.js"></script>
+
+	<script type="text/javascript">
+	try {
+	    if (!firebase.apps.length) {
+            const firebaseConfig = { //from firebase project setting
+					   
+			apiKey: "AIzaSyB-Z7TjtYw3N1Ks2vgx-um5nno9HSug2u0",
+			authDomain: "store-notify.firebaseapp.com",
+			projectId: "store-notify",
+			 storageBucket: "store-notify.appspot.com",
+			 messagingSenderId: "396732087280",
+		   appId: "1:396732087280:web:08481e982ba04e72043b35",
+		   measurementId: "G-FFGVK38GZK",
+			vapidKey: 'BLYt3hssi5Ba3jF9TGvYp2kC-8Hi8K_qim_Wr93ybNj6Co_d8HXbY39p4cF8ix5u1AqHvglhdtrwncVV1sYKb3U' 
+            };
+            firebase.initializeApp(firebaseConfig);
+        }
+	   
+	       const messaging = firebase.messaging();
+    
+			messaging.onMessage((payload) => {
+				console.log('Message received. ', payload);
+		
+				const notificationTitle = 'OnMessage Title';
+				const notificationOptions = {
+					body: 'OnMessage body.'
+				};
+                return self.registration.showNotification(notificationTitle, notificationOptions);
+			});
+			
+		   function resetUI() {
+				const vapidKey = '<>'; //from firebase project settings
+				messaging.getToken({ vapidKey: vapidKey }).then((currentToken) => {
+					console.log("currentToken", currentToken);
+					if (currentToken) {
+						//..
+					} else {
+						console.log('No registration token available. Request permission to generate one.');
+						requestPermission();
+					}
+				}).catch((err) => {
+					console.log('An error occurred while retrieving token. ', err);
+				});
+			}
+    
+			function requestPermission() {
+				console.log('Requesting permission...');
+				Notification.requestPermission().then((permission) => {
+					if (permission === 'granted') {
+						console.log('Notification permission granted.');
+						resetUI();
+					} else {
+						console.log('Unable to get permission to notify.');
+					}
+				});
+			}
+    
+        resetUI();
+	
+	 } catch (e) {
+        console.log("firebase startup error ", e);
+    }
+	if ("serviceWorker" in navigator) {
+	  window.addEventListener("load", function () {
+		// navigator.serviceWorker.register("/flutter_service_worker.js");
+		navigator.serviceWorker.register("/firebase-messaging-sw.js");
+	  });
+    }
+</script>
   </head>
   <body>
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">  <div class="mdl-tabs__tab-bar">      <a href="#welcome-panel" class="mdl-tabs__tab is-active">Glaubhanta-Messaging</a>      <a href="#Push-Notification-panel" class="mdl-tabs__tab">Notifications & Alerts</a>      <a href="#Configure-panel" class="mdl-tabs__tab">Configure Notifications</a>  </div>
+  <div class="mdl-tabs__panel is-active" id="welcome-panel">
+    <div id="message">      <h2>Welcome</h2>      <h1>Firebase Hosting Setup Complete</h1>      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>    </div>    <p id="load">Firebase SDK Loading&hellip;</p>    <script>      document.addEventListener('DOMContentLoaded', function() {        const loadEl = document.querySelector('#load');
+        try {          let app = firebase.app();          let features = [            'auth',             'database',             'firestore',            'functions',            'messaging',             'storage',             'analytics',             'remoteConfig',            'performance',          ].filter(feature => typeof app[feature] === 'function');          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;		  		  features.forEach( ft => { 			console.log(" type of "+typeof app[feature]);					  })		  		          } catch (e) {          console.error(e);          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';        }      });    </script>
+</div>
+</div>  <!-- Welcome Panel --->
+  <div class="mdl-tabs__panel " id="Push-Notification-panel">
+<div class='demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header'>  <!-- Header section containing title -->  <header class='mdl-layout__header mdl-color-text--white mdl-color--light-blue-700'>    <div class='mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid'>      <div class='mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop'>        <h3>Firebase Cloud Messaging</h3>      </div>    </div>  </header>  <main class='mdl-layout__content mdl-color--grey-100'>    <div class='mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid'>      <!-- Container for the Table of content -->      <div class='mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop'>        <div class='mdl-card__supporting-text mdl-color-text--grey-600'>          <!-- div to display the generated registration token -->          <div id='token_div' style='display: none;'>            <h4>Registration Token</h4>            <p id='token' style='word-break: break-all;'></p>            <button id='delete-token-button' class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored'>              Delete Token            </button>          </div>          <!-- div to display the UI to allow the request for permission to               notify the user. This is shown if the app has not yet been               granted permission to notify. -->          <div id='permission_div' style='display: flex;'>            <h4>Needs Permission</h4>            <button id='request-permission-button'                    class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored'>Request Permission            </button>          </div>          <!-- div to display messages received by this app. -->          <div id='messages'></div>        </div>      </div>    </div>  </main></div>
+</div> <!--Notification Panel-->
+</div> <!-- MATERIAL  TAB  --> 
     <app-root></app-root>
+<script src='main.ts' type='module'></script>
   </body>
 </html>

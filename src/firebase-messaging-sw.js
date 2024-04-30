@@ -21,10 +21,31 @@ firebase.initializeApp =( {
   storageBucket: "store-notify.appspot.com",
   messagingSenderId: "396732087280",
   appId: "1:396732087280:web:08481e982ba04e72043b35",
-  measurementId: "G-FFGVK38GZK"
+  measurementId: "G-FFGVK38GZK",
+  vapidKey: "BGNeJguSobiuNsximwvJBI_pUtTzOMj1scCMBpV3B4M7ag63YvQmyrf-IXrYJeTwyNoEoybrklL9cDSWI3xWbOo"
 });
 
 
 
 const messaging = firebase.messaging();
 
+messaging.setBackgroundMessageHandler(function (payload) {
+    const promiseChain = clients
+        .matchAll({
+            type: "window",
+            includeUncontrolled: true
+        })
+        .then(windowClients => {
+            for (let i = 0; i < windowClients.length; i++) {
+                const windowClient = windowClients[i];
+                windowClient.postMessage(payload);
+            }
+        })
+        .then(() => {
+            return registration.showNotification("New Message");
+        });
+    return promiseChain;
+});
+self.addEventListener('notificationclick', function (event) {
+    console.log('notification received: ', event)
+});

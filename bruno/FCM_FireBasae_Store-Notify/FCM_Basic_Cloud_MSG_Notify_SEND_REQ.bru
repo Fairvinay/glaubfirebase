@@ -1,0 +1,30 @@
+meta {
+  name: FCM_Basic_Cloud_MSG_Notify_SEND_REQ
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://fcm.googleapis.com/fcm/send
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: key=AAAAXF8TO_A:APA91bEKXOnlz4PEy8NuLsntJTgzlNadid7PvnHOQBWX08j2f2b7lc-zwFFsB8jadcQ4HYhGyFgv0YnDwJpnEoXLw0HVqVSxQsDCO521TlKR_3FQYw2n5IyW9kxz7GSVEQyBi0UMpX4G
+  Content-Type: application/json
+  TOKEN: BGNeJguSobiuNsximwvJBI_pUtTzOMj1scCMBpV3B4M7ag63YvQmyrf-IXrYJeTwyNoEoybrklL9cDSWI3xWbOo
+  TOKEN2: BLYt3hssi5Ba3jF9TGvYp2kC-8Hi8K_qim_Wr93ybNj6Co_d8HXbY39p4cF8ix5u1AqHvglhdtrwncVV1sYKb3U
+  AARTE: duSq7QN6PEJS1gPgYTOY3Q:APA91bEwzZFdZ8uQ3yu60tgktXohaRbgXhUapFM96Jy7eLO36a6R8IygFrNUVygk-8xexZ4lKArN2d2Xp-gegrhYEizDv4H47HKnNOn5PjqBqJE3lDhA5GJZv4dFinh3mjhs8tdeak2Z
+}
+
+body:json {
+  {
+    "notification": {
+      
+      "title": "Second Notification",
+      "body": "Hello from Jishnu!!Monday april 29 2024"
+    },
+    "to": "duSq7QN6PEJS1gPgYTOY3Q:APA91bEwzZFdZ8uQ3yu60tgktXohaRbgXhUapFM96Jy7eLO36a6R8IygFrNUVygk-8xexZ4lKArN2d2Xp-gegrhYEizDv4H47HKnNOn5PjqBqJE3lDhA5GJZv4dFinh3mjhs8tdeak2Z"
+  }
+}
